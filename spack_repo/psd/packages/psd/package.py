@@ -34,9 +34,9 @@ class Psd(AutotoolsPackage):
     depends_on("m4", type="build")
 
     depends_on("tfel")
-    depends_on("mgis")
-    depends_on("freefem+mpi+petsc")
-    depends_on("petsc+mpi+hpddm+mumps")
+    depends_on("mgispsd")
+    depends_on("freefempsd+mpi+petsc~superlu")
+    depends_on("petsc+mpi+hpddm+mumps+ptscotch+parmmg+mmg")
 
     def autoreconf(self, spec, prefix):
         autoreconf("--install", "--verbose", "--force")
